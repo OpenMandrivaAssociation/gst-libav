@@ -26,7 +26,6 @@ Video codec plugin for GStreamer based on the libav libraries.
 %package -n %{bname}-libav
 Summary:	Gstreamer plugin for the libav codec
 Group:		Video
-Obsoletes:	gstreamer0.10-ffmpeg
 
 %description -n %{bname}-libav
 Video codec plugin for GStreamer based on the libav libraries.
