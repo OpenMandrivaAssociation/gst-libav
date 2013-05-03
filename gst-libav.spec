@@ -7,18 +7,18 @@ Version:	1.0.5
 Release:	2
 License:	GPLv2+
 Group:		Video
-URL:		http://www.gstreamer.net
+Url:		http://www.gstreamer.net
 Source0:	http://gstreamer.freedesktop.org/src/gst-libav/%{name}-%{version}.tar.xz
 
+%ifnarch %{arm} %{mips}
+BuildRequires:	valgrind
+%endif
+BuildRequires:	yasm
 BuildRequires:	bzip2-devel
 BuildRequires:	pkgconfig(check)
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-%{api})
 BuildRequires:	pkgconfig(orc-0.4)
-BuildRequires:	yasm
-%ifnarch %{arm} %{mips}
-BuildRequires:	valgrind
-%endif
 
 %description
 Video codec plugin for GStreamer based on the libav libraries.
