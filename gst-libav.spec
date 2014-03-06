@@ -53,5 +53,4 @@ Video codec plugin for GStreamer based on the libav libraries.
 %files -n %{bname}-libav
 %doc README NEWS TODO ChangeLog AUTHORS
 %{_libdir}/gstreamer-%{api}/libgstlibav.so
-%{_libdir}/gstreamer-%{api}/libgstavscale.so
 
