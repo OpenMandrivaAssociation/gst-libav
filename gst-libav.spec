@@ -50,6 +50,8 @@ Video codec plugin for GStreamer based on the libav libraries.
 %install
 %makeinstall_std
 
+rm -fr %{buildroot}%{_datadir}/gtk-doc
+
 %files -n %{bname}-libav
 %doc README NEWS TODO ChangeLog AUTHORS
 %{_libdir}/gstreamer-%{api}/libgstlibav.so
