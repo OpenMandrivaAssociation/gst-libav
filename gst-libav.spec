@@ -35,6 +35,11 @@ Video codec plugin for GStreamer based on the libav libraries.
 %apply_patches
 
 %build
+%ifarch %arm
+export CC=gcc
+export CXX=g++
+%endif
+
 %configure \
 	--with-package-name='OpenMandriva %{name} package' \
 	--with-package-origin='http://www.openmandriva.org/' \
