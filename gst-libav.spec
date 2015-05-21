@@ -4,7 +4,7 @@
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
 Version:	1.4.5
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Video
 Url:		http://www.gstreamer.net
@@ -19,6 +19,7 @@ BuildRequires:	pkgconfig(check)
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-%{api})
 BuildRequires:	pkgconfig(orc-0.4)
+BuildRequires:	ffmpeg-devel
 
 %description
 Video codec plugin for GStreamer based on the libav libraries.
@@ -47,7 +48,8 @@ export CXX=g++
 	--disable-decoder=mp3on4 \
 	--disable-decoder=mp3adu \
 	--disable-demuxer=mp3 \
-	--disable-demuxer=asf'
+	--disable-demuxer=asf' \
+	--with-system-libav
 
 %make
 
