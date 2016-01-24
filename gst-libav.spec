@@ -3,7 +3,7 @@
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.6.2
+Version:	1.6.3
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -43,7 +43,7 @@ export CXX=g++
 
 %configure \
 	--with-package-name='OpenMandriva %{name} package' \
-	--with-package-origin='http://www.openmandriva.org/' \
+	--with-package-origin="%{disturl}" \
 	--with-libav-extra-configure='--disable-decoder=mp3 \
 	--disable-decoder=mp3on4 \
 	--disable-decoder=mp3adu \
