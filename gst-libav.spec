@@ -9,7 +9,10 @@ License:	GPLv2+
 Group:		Video
 Url:		http://www.gstreamer.net
 Source0:	http://gstreamer.freedesktop.org/src/gst-libav/%{name}-%{version}.tar.xz
-
+Patch1:		0001-avdeinterlace-Port-non-deprecated-AVFilter-API.patch
+Patch2:		0002-libav-Remove-usage-of-deprecated-API.patch
+Patch3:		0003-libav-Bitrate-field-changed-from-int-to-int64_t-fix-.patch
+Patch4:		0004-avdeinterlace-Chain-up-to-parent-class-dispose.patch
 %ifnarch %{arm} %{mips}
 BuildRequires:	valgrind
 %endif
