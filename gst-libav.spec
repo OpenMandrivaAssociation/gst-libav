@@ -13,7 +13,7 @@ Patch1:		0001-avdeinterlace-Port-non-deprecated-AVFilter-API.patch
 Patch2:		0002-libav-Remove-usage-of-deprecated-API.patch
 Patch3:		0003-libav-Bitrate-field-changed-from-int-to-int64_t-fix-.patch
 Patch4:		0004-avdeinterlace-Chain-up-to-parent-class-dispose.patch
-%ifnarch %{arm} %{mips}
+%ifnarch %{armx} %{mips}
 BuildRequires:	valgrind
 %endif
 BuildRequires:	yasm
