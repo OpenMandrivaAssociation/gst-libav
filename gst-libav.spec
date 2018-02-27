@@ -3,7 +3,7 @@
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.12.4
+Version:	1.13.1
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -39,8 +39,9 @@ Video codec plugin for GStreamer based on the libav libraries.
 %ifarch %arm
 export CC=gcc
 export CXX=g++
+export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declarations"
 %endif
-
+export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declarations"
 %configure \
 	--with-package-name='OpenMandriva %{name} package' \
 	--with-package-origin="%{disturl}" \
