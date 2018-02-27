@@ -9,6 +9,7 @@ License:	GPLv2+
 Group:		Video
 Url:		http://www.gstreamer.net
 Source0:	http://gstreamer.freedesktop.org/src/gst-libav/%{name}-%{version}.tar.xz
+Source1:	gst-libav.rpmlintrc
 Patch0:		gst-libav-1.12.4-ffmpeg-3.5.patch
 %ifnarch %{armx} %{mips}
 BuildRequires:	valgrind
