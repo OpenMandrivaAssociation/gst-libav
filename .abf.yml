@@ -1,4 +1,2 @@
-removed_sources:
-  gst-libav-1.10.2.tar.xz: 817504982838d21ccda99bff2c434083923b27e1
 sources:
-  gst-libav-1.13.1.tar.xz: a370c7b4bae1f7b44cf0191dc93dcfe74412c9d6
+  gst-libav-1.14.4.tar.xz: 93c92745081265ae5769ad804bf1f89c541646c9
