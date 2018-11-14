@@ -3,8 +3,8 @@
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.13.1
-Release:	2
+Version:	1.14.4
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://www.gstreamer.net
@@ -33,8 +33,7 @@ Group:		Video
 Video codec plugin for GStreamer based on the libav libraries.
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 
 %build
 %ifarch %arm
@@ -53,10 +52,10 @@ export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declar
 	--disable-demuxer=asf' \
 	--with-system-libav
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 rm -fr %{buildroot}%{_datadir}/gtk-doc
 
