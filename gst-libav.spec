@@ -24,7 +24,6 @@ BuildRequires:	pkgconfig(gstreamer-plugins-base-%{api})
 BuildRequires:	pkgconfig(orc-0.4)
 BuildRequires:	ffmpeg-devel
 BuildRequires:	git-core
-BuildRequires:	gtk-doc
 
 %description
 Video codec plugin for GStreamer based on the libav libraries.
@@ -45,7 +44,7 @@ mkdir gst-libs/ext/libav
 touch gst-libs/ext/libav/configure
 
 # (re)generate autofoo using our autotools
-./autogen.sh
+./autogen.sh --disable-gtk-doc
 
 %build
 %ifarch %arm
@@ -58,10 +57,6 @@ export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declar
 	--with-package-name='OpenMandriva %{name} package' \
 	--with-package-origin="%{disturl}" \
 	--disable-fatal-warnings \
-	--disable-decoder=mp3on4 \
-	--disable-decoder=mp3adu \
-	--disable-demuxer=mp3 \
-	--disable-demuxer=asf' \
 	--with-system-libav \
 	--disable-gtk-doc \
 	--disable-gtk-doc-html
