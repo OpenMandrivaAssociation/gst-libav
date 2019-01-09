@@ -44,7 +44,7 @@ mkdir gst-libs/ext/libav
 touch gst-libs/ext/libav/configure
 
 # (re)generate autofoo using our autotools
-NOCONFIGURE=1 ./autogen.sh
+./autogen.sh
 
 %build
 %ifarch %arm
