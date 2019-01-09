@@ -61,7 +61,9 @@ export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declar
 	--disable-decoder=mp3adu \
 	--disable-demuxer=mp3 \
 	--disable-demuxer=asf' \
-	--with-system-libav
+	--with-system-libav \
+	--disable-gtk-doc \
+	--disable-gtk-doc-html
 
 %make_build
 
