@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig(gstreamer-plugins-base-%{api})
 BuildRequires:	pkgconfig(orc-0.4)
 BuildRequires:	ffmpeg-devel
 BuildRequires:	git-core
+BuildRequires:	gtk-doc
 
 %description
 Video codec plugin for GStreamer based on the libav libraries.
