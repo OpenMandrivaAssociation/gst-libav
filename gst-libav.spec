@@ -42,26 +42,21 @@ Video codec plugin for GStreamer based on the libav libraries.
 rm -rf gst-libs/ext/libav
 # fool configure to see a bundled libav/ffmpeg
 mkdir gst-libs/ext/libav
-touch gst-libs/ext/libav/configure
+ln -s /bin/true gst-libs/ext/libav/configure
 
 # (re)generate autofoo using our autotools
-./autogen.sh
+NOCONFIGURE=1 ./autogen.sh
 
 %build
 %ifarch %arm
 export CC=gcc
 export CXX=g++
-export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declarations"
 %endif
 export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declarations"
 %configure \
 	--with-package-name='OpenMandriva %{name} package' \
 	--with-package-origin="%{disturl}" \
 	--disable-fatal-warnings \
-	--disable-decoder=mp3on4 \
-	--disable-decoder=mp3adu \
-	--disable-demuxer=mp3 \
-	--disable-demuxer=asf' \
 	--with-system-libav \
 	--disable-gtk-doc \
 	--disable-gtk-doc-html
