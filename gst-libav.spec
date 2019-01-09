@@ -1,5 +1,5 @@
-%define	api	1.0
-%define	bname	gstreamer%{api}
+%define api 1.0
+%define bname gstreamer%{api}
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
@@ -17,7 +17,7 @@ Patch0:		gst-libav-1.14.4-ffmpeg-4.1.patch
 BuildRequires:	valgrind
 %endif
 BuildRequires:	yasm
-BuildRequires:	bzip2-devel
+BuildRequires:	pkgconfig(bzip2)
 BuildRequires:	pkgconfig(check)
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(gstreamer-plugins-base-%{api})
@@ -36,6 +36,12 @@ Video codec plugin for GStreamer based on the libav libraries.
 
 %prep
 %autosetup -p1
+# get rid of the bundled libav
+rm -rf gst-libs/ext/libav
+# fool configure to see a bundled libav/ffmpeg
+mkdir gst-libs/ext/libav
+touch gst-libs/ext/libav/configure
+
 [ -e autogen.sh ] && ./autogen.sh
 
 %build
@@ -48,7 +54,7 @@ export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declar
 %configure \
 	--with-package-name='OpenMandriva %{name} package' \
 	--with-package-origin="%{disturl}" \
-	--with-libav-extra-configure='--disable-decoder=mp3 \
+	--disable-fatal-warnings \
 	--disable-decoder=mp3on4 \
 	--disable-decoder=mp3adu \
 	--disable-demuxer=mp3 \
