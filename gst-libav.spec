@@ -44,7 +44,8 @@ rm -rf gst-libs/ext/libav
 
 %build
 export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declarations"
-%meson
+%meson \
+       -Ddoc=disabled
 
 %meson_build
 
