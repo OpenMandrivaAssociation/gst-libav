@@ -42,9 +42,6 @@ rm -rf gst-libs/ext/libav
 #mkdir gst-libs/ext/libav
 #ln -s /bin/true gst-libs/ext/libav/configure
 
-# (re)generate autofoo using our autotools
-NOCONFIGURE=1 ./autogen.sh
-
 %build
 export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declarations"
 %meson
