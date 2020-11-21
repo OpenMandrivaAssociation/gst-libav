@@ -1,9 +1,10 @@
+%global debug_package %{nil}
 %define api 1.0
 %define bname gstreamer%{api}
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.16.2
+Version:	1.18.1
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -21,6 +22,7 @@ BuildRequires:	pkgconfig(gstreamer-plugins-base-%{api})
 BuildRequires:	pkgconfig(orc-0.4)
 BuildRequires:	ffmpeg-devel
 BuildRequires:	git-core
+BuildRequires:  meson
 
 %description
 Video codec plugin for GStreamer based on the libav libraries.
@@ -37,29 +39,21 @@ Video codec plugin for GStreamer based on the libav libraries.
 # get rid of the bundled libav
 rm -rf gst-libs/ext/libav
 # fool configure to see a bundled libav/ffmpeg
-mkdir gst-libs/ext/libav
-ln -s /bin/true gst-libs/ext/libav/configure
-
-# (re)generate autofoo using our autotools
-NOCONFIGURE=1 ./autogen.sh
+#mkdir gst-libs/ext/libav
+#ln -s /bin/true gst-libs/ext/libav/configure
 
 %build
 export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declarations"
-%configure \
-	--with-package-name='OpenMandriva %{name} package' \
-	--with-package-origin="%{disturl}" \
-	--disable-fatal-warnings \
-	--with-system-libav \
-	--disable-gtk-doc \
-	--disable-gtk-doc-html
+%meson \
+       -Ddoc=disabled
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 rm -fr %{buildroot}%{_datadir}/gtk-doc
 
 %files -n %{bname}-libav
-%doc README NEWS TODO ChangeLog AUTHORS
+%doc README.md NEWS ChangeLog AUTHORS
 %{_libdir}/gstreamer-%{api}/libgstlibav.so
