@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 %define api 1.0
 %define bname gstreamer%{api}
 
