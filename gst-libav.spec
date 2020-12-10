@@ -4,7 +4,7 @@
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.18.1
+Version:	1.18.2
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -12,16 +12,16 @@ Url:		http://www.gstreamer.net
 Source0:	http://gstreamer.freedesktop.org/src/gst-libav/%{name}-%{version}.tar.xz
 Source1:	gst-libav.rpmlintrc
 %ifnarch %{armx} %{mips}
-BuildRequires:	valgrind
+BuildRequires: valgrind
 %endif
-BuildRequires:	yasm
-BuildRequires:	pkgconfig(bzip2)
-BuildRequires:	pkgconfig(check)
-BuildRequires:	pkgconfig(freetype2)
-BuildRequires:	pkgconfig(gstreamer-plugins-base-%{api})
-BuildRequires:	pkgconfig(orc-0.4)
-BuildRequires:	ffmpeg-devel
-BuildRequires:	git-core
+BuildRequires: yasm
+BuildRequires: pkgconfig(bzip2)
+BuildRequires: pkgconfig(check)
+BuildRequires: pkgconfig(freetype2)
+BuildRequires: pkgconfig(gstreamer-plugins-base-%{api})
+BuildRequires: pkgconfig(orc-0.4)
+BuildRequires: ffmpeg-devel
+BuildRequires: git-core
 BuildRequires:  meson
 
 %description
