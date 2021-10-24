@@ -6,7 +6,7 @@
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.18.4
+Version:	1.19.2
 Release:	1
 License:	GPLv2+
 Group:		Video
@@ -47,7 +47,8 @@ rm -rf gst-libs/ext/libav
 %build
 export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declarations"
 %meson \
-       -Ddoc=disabled
+       -Ddoc=disabled \
+       --buildtype=release
 
 %meson_build
 
