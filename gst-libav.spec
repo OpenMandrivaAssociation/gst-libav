@@ -6,13 +6,13 @@
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.19.3
-Release:	2
+Version:	1.20.0
+Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		http://www.gstreamer.net
 Source0:	http://gstreamer.freedesktop.org/src/gst-libav/%{name}-%{version}.tar.xz
-Source1:	gst-libav.rpmlintrc
+#Source1:	gst-libav.rpmlintrc
 Patch0:		https://gitlab.freedesktop.org/gstreamer/gst-libav/-/merge_requests/139.patch
 %ifnarch %{armx} %{mips}
 BuildRequires: valgrind
