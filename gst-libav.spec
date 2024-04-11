@@ -6,7 +6,7 @@
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.24.0
+Version:	1.24.2
 Release:	2
 License:	GPLv2+
 Group:		Video
