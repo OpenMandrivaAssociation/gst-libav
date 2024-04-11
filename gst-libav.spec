@@ -13,6 +13,7 @@ Group:		Video
 Url:		https://www.gstreamer.net
 Source0:	https://gstreamer.freedesktop.org/src/gst-libav/%{name}-%{version}.tar.xz
 Source1:	gst-libav.rpmlintrc
+Patch1:		gst-libav-1.24.2-ffmpeg7.patch
 %ifnarch %{armx} %{mips}
 BuildRequires: valgrind
 %endif
