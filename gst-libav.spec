@@ -1,6 +1,9 @@
 # Work around incomplete debug packages
 %global _empty_manifest_terminate_build 0
 
+%global optflags %{optflags} -Wno-error -Wno-implicit-function-declaration
+%global optflags %{optflags} -Wno-incompatible-function-pointer-types
+
 %define api 1.0
 %define bname gstreamer%{api}
 
