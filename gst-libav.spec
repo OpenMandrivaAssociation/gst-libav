@@ -1,12 +1,12 @@
 # Work around incomplete debug packages
-%global _empty_manifest_terminate_build 0
+%undefine _debugsource_packages
 
 %define api 1.0
 %define bname gstreamer%{api}
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.24.4
+Version:	1.24.5
 Release:	1
 License:	GPLv2+
 Group:		Video

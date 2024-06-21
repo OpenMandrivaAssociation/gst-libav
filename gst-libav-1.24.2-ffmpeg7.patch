@@ -1,6 +1,8 @@
---- gst-libav-1.24.2/ext/libav/gstavprotocol.c.orig	2024-04-11 17:37:27.394650114 +0100
-+++ gst-libav-1.24.2/ext/libav/gstavprotocol.c	2024-04-11 17:42:33.165772715 +0100
-@@ -102,7 +102,11 @@
+diff -up gst-libav-1.24.5/ext/libav/gstavcfg.c.1~ gst-libav-1.24.5/ext/libav/gstavcfg.c
+diff -up gst-libav-1.24.5/ext/libav/gstavprotocol.c.1~ gst-libav-1.24.5/ext/libav/gstavprotocol.c
+--- gst-libav-1.24.5/ext/libav/gstavprotocol.c.1~	2024-06-20 13:54:15.000000000 +0200
++++ gst-libav-1.24.5/ext/libav/gstavprotocol.c	2024-06-21 16:47:18.899715185 +0200
+@@ -102,7 +102,11 @@ gst_ffmpegdata_read (void *priv_data, un
  }
  
  static int
@@ -13,34 +15,5 @@
  {
    GstProtocolInfo *info;
    GstBuffer *outbuf;
---- gst-libav-1.24.2/ext/libav/gstavviddec.c.orig	2024-04-11 17:35:28.022920273 +0100
-+++ gst-libav-1.24.2/ext/libav/gstavviddec.c	2024-04-11 17:35:34.300695276 +0100
-@@ -2688,7 +2688,6 @@
-         in_plugin->id == AV_CODEC_ID_V408 ||
-         in_plugin->id == AV_CODEC_ID_V410 ||
-         in_plugin->id == AV_CODEC_ID_R210
--        || in_plugin->id == AV_CODEC_ID_AYUV
-         || in_plugin->id == AV_CODEC_ID_Y41P
-         || in_plugin->id == AV_CODEC_ID_012V
-         || in_plugin->id == AV_CODEC_ID_YUV4
---- gst-libav-1.24.2/ext/libav/gstavcfg.c.orig	2024-04-11 17:33:38.824842762 +0100
-+++ gst-libav-1.24.2/ext/libav/gstavcfg.c	2024-04-11 17:41:00.338067561 +0100
-@@ -442,7 +442,7 @@
-         break;
-         /* TODO: didn't find options for the video encoders with
-          * the following type, add support if needed */
--      case AV_OPT_TYPE_CHANNEL_LAYOUT:
-+      case AV_OPT_TYPE_CHLAYOUT:
-       case AV_OPT_TYPE_COLOR:
-       case AV_OPT_TYPE_VIDEO_RATE:
-       case AV_OPT_TYPE_SAMPLE_FMT:
---- gst-libav-1.24.2/ext/libav/gstavvidenc.c.orig	2024-04-11 17:34:11.657661509 +0100
-+++ gst-libav-1.24.2/ext/libav/gstavvidenc.c	2024-04-11 17:34:56.578048031 +0100
-@@ -1013,7 +1013,6 @@
-         in_plugin->id == AV_CODEC_ID_V408 ||
-         in_plugin->id == AV_CODEC_ID_V410 ||
-         in_plugin->id == AV_CODEC_ID_R210
--        || in_plugin->id == AV_CODEC_ID_AYUV
-         || in_plugin->id == AV_CODEC_ID_Y41P
-         || in_plugin->id == AV_CODEC_ID_012V
-         || in_plugin->id == AV_CODEC_ID_YUV4
+diff -up gst-libav-1.24.5/ext/libav/gstavviddec.c.1~ gst-libav-1.24.5/ext/libav/gstavviddec.c
+diff -up gst-libav-1.24.5/ext/libav/gstavvidenc.c.1~ gst-libav-1.24.5/ext/libav/gstavvidenc.c
