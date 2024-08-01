@@ -16,7 +16,7 @@ Source1:	gst-libav.rpmlintrc
 Patch1:		gst-libav-1.24.2-ffmpeg7.patch
 # remove probe which is invalid in ffmpeg7
 # see https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/6505
-Patch2:		6505.diff
+#Patch2:		6505.diff
 %ifnarch %{armx} %{mips}
 BuildRequires: valgrind
 %endif
