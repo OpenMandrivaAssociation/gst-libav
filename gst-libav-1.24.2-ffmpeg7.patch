@@ -1,19 +1,19 @@
-diff -up gst-libav-1.24.5/ext/libav/gstavcfg.c.1~ gst-libav-1.24.5/ext/libav/gstavcfg.c
-diff -up gst-libav-1.24.5/ext/libav/gstavprotocol.c.1~ gst-libav-1.24.5/ext/libav/gstavprotocol.c
---- gst-libav-1.24.5/ext/libav/gstavprotocol.c.1~	2024-06-20 13:54:15.000000000 +0200
-+++ gst-libav-1.24.5/ext/libav/gstavprotocol.c	2024-06-21 16:47:18.899715185 +0200
-@@ -102,7 +102,11 @@ gst_ffmpegdata_read (void *priv_data, un
+diff -uraN gst-libav-1.24.6/ext/libav/gstavprotocol.c omv-gst-libav-1.24.6/ext/libav/gstavprotocol.c
+--- gst-libav-1.24.6/ext/libav/gstavprotocol.c	2024-07-29 17:41:37.000000000 +0200
++++ omv-gst-libav-1.24.6/ext/libav/gstavprotocol.c	2024-08-01 20:19:17.126814693 +0200
+@@ -102,11 +102,11 @@
  }
  
  static int
+-#if LIBAVUTIL_VERSION_MAJOR >= 59
+-gst_ffmpegdata_write (void *priv_data, const uint8_t * buf, int size)
+-#else
 -gst_ffmpegdata_write (void *priv_data, uint8_t * buf, int size)
 +gst_ffmpegdata_write (void *priv_data,
 +#if LIBAVCODEC_VERSION_MAJOR > 60
-+ const 
-+#endif
++ const
+ #endif
 +  uint8_t * buf, int size)
  {
    GstProtocolInfo *info;
    GstBuffer *outbuf;
-diff -up gst-libav-1.24.5/ext/libav/gstavviddec.c.1~ gst-libav-1.24.5/ext/libav/gstavviddec.c
-diff -up gst-libav-1.24.5/ext/libav/gstavvidenc.c.1~ gst-libav-1.24.5/ext/libav/gstavvidenc.c
