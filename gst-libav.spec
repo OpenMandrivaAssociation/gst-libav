@@ -6,14 +6,14 @@
 
 Summary:	Gstreamer plugin for the libav codec
 Name:		gst-libav
-Version:	1.24.12
+Version:	1.26.0
 Release:	1
 License:	GPLv2+
 Group:		Video
 Url:		https://www.gstreamer.net
 Source0:	https://gstreamer.freedesktop.org/src/gst-libav/%{name}-%{version}.tar.xz
 Source1:	gst-libav.rpmlintrc
-Patch1:		gst-libav-1.24.2-ffmpeg7.patch
+#Patch1:		gst-libav-1.24.2-ffmpeg7.patch
 # remove probe which is invalid in ffmpeg7
 # see https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/6505
 #Patch2:		6505.diff
