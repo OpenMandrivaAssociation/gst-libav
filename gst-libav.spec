@@ -62,5 +62,5 @@ export CFLAGS="$CFLAGS -Wno-implicit-function-declaration -Wno-deprecated-declar
 rm -fr %{buildroot}%{_datadir}/gtk-doc
 
 %files -n %{bname}-libav
-%doc README.md NEWS ChangeLog AUTHORS
+%doc README.md ChangeLog
 %{_libdir}/gstreamer-%{api}/libgstlibav.so
